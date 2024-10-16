@@ -47,7 +47,7 @@ export async function GET(req : NextRequest) {
         path: '/',
     })
 
-    return NextResponse.redirect("http://localhost:3000" + "/", { status: 307 });
+    return NextResponse.redirect(process.env.DOMAIN + "/", { status: 307 });
   } 
   catch (err) {
     console.log('Something went wrong!', err);
