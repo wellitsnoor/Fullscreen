@@ -73,9 +73,7 @@ export default function Home() {
 
   useEffect(() => {
     const colorThief = new ColorThief();
-    const img = new Image();
-
-   
+    const img = new Image();   
   
     img.addEventListener('load', () => {
       const colors = colorThief.getPalette(img, 5);
@@ -133,6 +131,7 @@ export default function Home() {
 
   return (
     <>
+
       <div id="body" className="backcontainer">
         <div id="1st"></div>
         <div id="2nd"></div>
@@ -140,41 +139,39 @@ export default function Home() {
         <div id="4th"></div>
         <div id="5th"></div>
       </div>
-      <div className="center">
-          <div id="playing" className={`${playing ? "show" : "hide"} relative inline-block `}>
-            <NextImage 
+      <div className="center max-w-[600px] sm:w-[600px] block w-[300px]">
+          <div id="playing" className={`${playing ? "show" : "hide"}`}>
+            <NextImage
               src={image || "/music.jpg"}
               width={0}
               height={0}
               sizes="100vw"
-              className="w-full h-auto"
+              className="w-full h-full" // change here to bring back image
               alt="album art" id="track-image" priority></NextImage>
-              <div className="flex mt-2">
-                  <div className="leading-tight  w-full ">
-                  <p id="track-name" className="noselect">{name}</p>
-                  <p id="track-artist" className="noselect">{artist.join(", ")}</p>
+              <div className="flex mt-2 sm:h-14 h-auto overflow-hidden ">
+                  <div className="leading-tight w-full overflow-hidden ">
+                  <p id="track-name" className="noselect w-full sm:h-8 sm:text-[25px] text-[20px] overflow-hidden whitespace-nowrap text-ellipsis ">{name}</p>
+                  <p id="track-artist" className="noselect overflow-hidden whitespace-nowrap text-ellipsis sm:text-[20px] text-[15px]">{artist.join(", ")}</p>
                   </div>
-                  <div className="h-full max-h-14 flex m-auto justify-right items-right text-right">
+                  <div className="h-auto sm:w-28 w-auto flex m-auto justify-end items-start text-right">
                     {liked ? (
                       <>  
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="size-7 cursor-pointer" onClick={dislike}>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="sm:size-7 size-6 cursor-pointer" onClick={dislike}>
                         <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
                       </svg>
                       </>
                     ) : (
   
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="white" className="size-7 cursor-pointer" onClick={like}>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="white" className="sm:size-7 size-6 cursor-pointer" onClick={like}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                       </svg>
-
-
                     )}
                   </div>
               </div>          
         </div>
        
         <div id="not-playing" className={`${playing ? "hide" : "show"}`}>
-            <p className="noselect" id="nothing">nothing is playing!</p>
+            <p className="noselect text-center sm:text-3xl text-2xl" id="nothing">nothing is playing!</p>
         </div>
     </div>
     </>
