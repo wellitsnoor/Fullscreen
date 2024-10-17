@@ -48,11 +48,9 @@ html, body {
   animation: gradient 15s infinite;
 }
 @keyframes gradient{ 
-
   70%{
       transform: scale(1.5) translate(-50px);
   }
-  
 }
 .backcontainer div:nth-child(1){
   height: 100%;
@@ -116,6 +114,7 @@ html, body {
   width: 100%;
   backdrop-filter: blur(8.705114254624592vh);
   /* filter: blur(8.7vh); */
+
 }
 .center{
   background-color: none;

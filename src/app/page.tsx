@@ -131,13 +131,16 @@ export default function Home() {
 
   return (
     <>
+      <div className="backbacktainer">
+        <div id="body" className="backcontainer">
 
-      <div id="body" className="backcontainer">
-        <div id="1st"></div>
-        <div id="2nd"></div>
-        <div id="3rd"></div>
-        <div id="4th"></div>
-        <div id="5th"></div>
+          <div id="1st"></div>
+          <div id="2nd"></div>
+          <div id="3rd"></div>
+          <div id="4th"></div>
+          <div id="5th"></div>
+
+        </div>
       </div>
       <div className="center max-w-[600px] sm:w-[600px] block w-[300px]">
           <div id="playing" className={`${playing ? "show" : "hide"}`}>
