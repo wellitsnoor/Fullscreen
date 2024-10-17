@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useCallback } from "react"
 import { useRouter } from "next/navigation"
-import NextImage from "next/image"
 import ColorThief from "colorthief"
 
 export default function Home() {
